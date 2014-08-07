@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="148.928px" height="122.574px" viewBox="0 0 148.928 122.574" enable-background="new 0 0 148.928 122.574"
+	 xml:space="preserve">
+<rect x="5.064" y="5.661" fill="#FFFFFF" width="137.732" height="87.771"/>
+<rect x="71.026" y="26.362" fill="none" width="46.315" height="13.711"/>
+<text transform="matrix(1 0 0 1 71.0261 29.314)" fill="#6D6968" font-family="'ArialMT'" font-size="4.1226">I plan to keep my </text>
+<text transform="matrix(1 0 0 1 71.0261 34.2603)" fill="#6D6968" font-family="'ArialMT'" font-size="4.1226">assets invested for:</text>
+<path fill="#92C028" d="M134.83,45.216c0,1.683-1.263,3.047-2.818,3.047H73.357c-1.556,0-2.816-1.364-2.816-3.047l0,0
+	c0-1.684,1.261-3.048,2.816-3.048h58.654C133.568,42.168,134.83,43.533,134.83,45.216L134.83,45.216z"/>
+<circle fill="#FFFFFF" cx="81.447" cy="45.216" r="0.914"/>
+<circle fill="#FFFFFF" cx="132.027" cy="45.216" r="0.914"/>
+<circle fill="#28337B" cx="104.009" cy="45.216" r="3.656"/>
+<rect x="16.465" y="22.103" fill="#2192D1" width="11.984" height="15.953"/>
+<rect x="29.118" y="22.103" fill="#1B5CA8" width="11.734" height="32.684"/>
+<rect x="16.465" y="38.861" fill="#2192D1" width="11.984" height="15.952"/>
+<rect x="16.465" y="55.467" fill="#1B5CA8" width="36.719" height="15.953"/>
+<g>
+	<rect x="16.465" y="77.63" fill="#D6D4D4" width="15.855" height="1.834"/>
+	<rect x="33.081" y="77.63" fill="#D6D4D4" width="15.855" height="1.834"/>
+	<rect x="49.945" y="77.63" fill="#D6D4D4" width="15.857" height="1.834"/>
+	<rect x="66.311" y="77.63" fill="#D6D4D4" width="15.857" height="1.834"/>
+	<rect x="83.052" y="77.63" fill="#92C028" width="15.856" height="1.834"/>
+</g>
+<rect x="53.792" y="55.467" fill="#92C028" width="11.982" height="15.953"/>
+<rect x="41.604" y="38.861" fill="#92C028" width="24.171" height="15.952"/>
+<rect x="41.604" y="22.184" fill="#1B5CA8" width="24.171" height="15.953"/>
+<g>
+	<polygon fill="#29317C" points="130.549,79.574 108.637,79.574 108.637,70.705 130.549,70.705 134.463,75.4 	"/>
+	<rect x="113.253" y="73.447" fill="none" width="16.837" height="4.192"/>
+	<text transform="matrix(1 0 0 1 113.2532 76.3979)" fill="#FFFFFF" font-family="'Arial-BoldMT'" font-size="4.1226">Submit</text>
+</g>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="10.6589" y1="-2.8643" x2="337.0729" y2="265.9476">
+	<stop  offset="0" style="stop-color:#1F5FAB"/>
+	<stop  offset="0.2707" style="stop-color:#1F62AD"/>
+	<stop  offset="0.5513" style="stop-color:#1E6AB2"/>
+	<stop  offset="0.8355" style="stop-color:#1E77BC"/>
+	<stop  offset="1" style="stop-color:#1F81C4"/>
+</linearGradient>
+<path fill="url(#SVGID_1_)" d="M148.928,99.362V0H0v99.362h51.508v13.88H33.882v9.332h81.805v-9.332H98.058v-13.88H148.928z
+	 M9.929,89.432V9.928H139v79.504H9.929z"/>
+</svg>

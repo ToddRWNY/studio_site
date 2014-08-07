@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      
+<html class="no-js lt-ie9 lt-ie8 lt-ie7">
+   <![endif]-->
+   <!--[if IE 7]>         
+   <html class="no-js lt-ie9 lt-ie8">
+      <![endif]-->
+      <!--[if IE 8]>         
+      <html class="no-js lt-ie9">
+         <![endif]-->
+         <!--[if gt IE 8]><!--> 
+         <html class="no-js">
+            <!--<![endif]-->
+            <head>
+               <meta charset="utf-8">
+               <meta http-equiv="X-UA-Compatible" content="IE=edge">
+               <title>Redworks Studio Digital Handbook</title>
+               <meta name="description" content="Redworks Studio Digital Best Practices Handbook">
+               <meta name="viewport" content="width=device-width, initial-scale=1">
+               <meta name="robots" content="noindex">
+               <meta name="apple-mobile-web-app-capable" content="yes" />
+               <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+               <meta name="apple-mobile-web-app-title" content="Redworks Digital Handbook">
+               <link href="img/apple-touch-icon-120x120.png" sizes="120x120" rel="apple-touch-icon">
+               <link href="img/apple-touch-icon-114x114.png" sizes="114x114" rel="apple-touch-icon">
+               <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+               <link href='http://fonts.googleapis.com/css?family=Lato:100,400,900' rel='stylesheet' type='text/css' >
+               <link href='http://fonts.googleapis.com/css?family=Joti+One' rel='stylesheet' type='text/css'>
+               <link rel="stylesheet" href="css/normalize.css">
+               <link rel="stylesheet" href="css/main.css" media="screen">
+               <link rel="stylesheet" href="css/print.css" media="print">
+               <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+               <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+               <link rel="stylesheet" type="text/css" href="shadowbox/shadowbox.css">
+               <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+			   <script type="text/javascript" src="js/shadowbox.js"></script>
+               <script src='js/jquery.zoom.js'></script>
+               <script src='js/mattsworld.js'></script>
+               <script src="Scripts/swfobject_modified.js" type="text/javascript"></script>
+               <script>
+			   //fairly lightweight lightbox
+			   	   Shadowbox.init({  
+				   		onFinish: clickClose,
+						displayNav: false
+					});
+					function clickClose(){
+						$('#sb-player').click(function(){
+							Shadowbox.close();
+						});
+					}
+			   </script>
+               <script>
+                  var isOpen=true;
+                  $(document).ready(function(){
+                    var myHeight=$(window).height();
+                  	$(window).resize(function(){
+                  		myHeight=$(window).height();
+                  	});
+                  	$('#nav-close').click(function(){
+                  		if(isOpen){
+                  			$(this).parent().animate({
+                  				top:"-"+(myHeight-$('#nav-close').height()-20),
+                  				borderRadius:20
+                  			}, 500);
+							$(this).css('font-size', '36px');
+                  			$(this).html("&#9662;");
+                  			isOpen=false;
+                  		}
+                  		else{
+                  			$(this).parent().animate({
+                  				top:0,
+                  				borderRadius:0
+                  			}, 500);
+							$(this).css('font-size', '30px');
+                  			$(this).html("&#10005;");
+                  			isOpen=true;
+                  		}
+                  	});//click
+					function preload(arrayOfImages) {
+						$(arrayOfImages).each(function(){
+							$('<img/>')[0].src = this;
+						});
+					}
+					preload([
+						'img/email_iphone_2.png'
+					]);
+					
+					//zoom.js
+					$('#zoom-jpg').zoom();
+					$('#zoom-png').zoom();
+					$('#zoom-gif').zoom();
+					$('#zoom-anim').zoom();
+					
+					
+					
+					
+                  });//doc ready
+               </script>
+               
+              
+            </head>
+            <body>
+               <!--[if lt IE 7]>
+               <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+               <![endif]-->
+               <!-- Add your site or application content here -->
+               <div id="wrapper">
+                  <header>
+                     <nav>
+                     	<div id="logo">
+                        <a class="navbar-brand" href="http://nydigital.redworks.com/">
+                			<img src="img/redworks_logo.png" style="padding-top:6px;" alt="RW" border="none" />
+                		</a>
+                        	<div id="menu-button">
+                            	<i class="fa fa-bars fa-2x"></i>
+                            </div>
+                        </div>
+                        <div id="nav-wrap">
+                           <a href="#EMAIL" id="nav-1">EMAIL<br><br></a>
+                           <a href="#HTML" id="nav-2">HTML(5)<br><br></a>
+                           <a href="#STANDARD" id="nav-3">FLASH<br><br></a>
+                           <a href="#RICH" id="nav-4">RICH MEDIA<br><br></a>
+                           <a href="#GRAPHICS" id="nav-5">GRAPHICS<br><br></a>
+                        </div>
+                        <div id="headline-gradient"></div>
+                     </nav>
+                  </header>
+                  <section id="TOP" class="first-headlines">
+                  	<h1>RedWorks Digital Studio:<br>Best Practices, Specs, and Tips.</h1>
+                  </section>
+                  <!--EMAIL-->
+                  <section id="EMAIL">
+                  <div class="superheadlines">
+                  <h4>EMAILS</h4>
+                  </div>
+                     <!--EMAIL Group 1-->
+                     <div class="headlines">
+                        <h1>Email best practices:</h1>
+                        <h2>Blocked images, mobile browsers, and varying user settings are a few of the things to consider when designing or coding an email.</h2>
+                     </div>
+                      <!---->
+                     <div class="segment">
+                        <div class="segment-wrapper">
+                           <h3>Basic Guidelines</h3>
+                           <div class="segment-text">
+                              <p>Basic guidelines: Keep the design clean and simple. Use a max-width of 600px, in-line css, ditch the images and all text should be live.</p><p>Please find email coding best practices <a href="http://www.campaignmonitor.com/guides/coding/guidelines/" target="_blank">here</a>.</p><p>For a full-list of @media supported responsive email clients please <a href="http://www.campaignmonitor.com/guides/mobile/" target="_blank">click here</a>.
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!---->
+                     <!---->
+                     <div class="segment">
+                        <div class="segment-wrapper">
+                           <h3>Know your email-safe fonts.</h3>
+                           <div class="segment-text">
+                              <p>Below is a (mostly) complete list of all email-safe fonts. Note that most fonts have bold and italic variants available, and where there are multiple fonts listed, there is a similar equivalent commonly used to backup the first option.</p>
+                              <p>A handful of email clients (such as iOS devices) can handle fancy <a href="http://www.google.com/fonts" target="_blank">Google Fonts</a>, but one of the fonts below must always be listed as a backup.</p>
+                              <div id="fonts">
+                              <div style="font-family:Arial, Helvetica, sans-serif">Arial/<span style="font-family:Helvetica, Arial, sans-serif">Helvetica</span></div>
+                              <div style="font-family:Arial Black, Gadget, sans-serif">Arial Black/<span style="font-family:Gadget, Arial Black, sans-serif">Gadget</span></div>
+                              <div style="font-family:Georgia, serif">Georgia</div>
+                              <div style="font-family:Impact, sans-serif">Impact</div>
+                              <div style="font-family:Lucida Console, Monaco, monospace">Lucida Console/<span style="font-family:Monaco, Lucida Console, monospace">Monaco</span></div>
+                              <div style="font-family:Lucida Sans Unicode, Lucida Grande, sans-serif">Lucida Sans Unicode/<span style="font-family:Lucida Grande, Lucida Sans Unicode, sans-serif">Lucida Grande</span></div>
+                              <div style="font-family:Palatino Linotype, Book Antiqua, Palatino, serif">Palatino Linotype/<span style="font-family:Book Antiqua, Palatino Linotype, Palatino, serif">Book Antiqua/</span><span style="font-family:Palatino, Palatino Linotype, Book Antiqua, serif">Palatino</span></div>
+                              <div style="font-family:Tahoma, Geneva, sans-serif">Tahoma/<span style="font-family:Geneva, Tahoma, sans-serif">Geneva</span></div>
+                              <div style="font-family:Times New Roman, serif">Times New Roman</div>
+                              <div style="font-family:Trebuchet MS, sans-serif">Trebuchet MS</div>
+                              <div style="font-family:Verdana, Geneva, sans-serif">Verdana/<span style="font-family:Geneva, Verdana, sans-serif">Geneva</span></div>
+                              </div>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!---->
+                     <div class="segment">
+                        <div class="segment-wrapper">
+                           <h3>All text should be live, not dead.</h3>
+                           <div class="segment-text">
+                              <p>Live text is the key to a good HTML email. A high text-to-image ratio will keep your email out of spam folders, and improve readability when images are blocked (only a handful of email clients enable images by default). When text is in an image, consider it dead on arrival. The headlines and calls-to-action especially must be live to maximize open and click rates. </p>
+                              <div class="segment-images">
+                              <a id="live-button">I'm alive!</a> <a id="dead-button">I'm dead.</a>
+                              </div>
+                              <p>Full disclosure: it is possible to create live buttons with gradients and rounded corners. BUT&mdash;it must be able to work with a plain background and square corners so that it can degrade gracefully in even the worst email clients (talking to you, every version of Outlook since 2007).</p>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!---->
+                     <div class="segment">
+                        <div class="segment-wrapper">
+                           <h3>Keep it simple.</h3>
+                           <div class="segment-text">
+                              <p>White space and simplicity in emails have been proven to increase click rates. Emails often have multiple calls-to-action or multiple modules. These should be constructed with a clear hierarchy and room to breathe. There is no limit to available vertical space, and separating elements improves readability. Don't feel pressured to keep every single element "above the fold".</p>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!---->
+                     <div class="segment">
+                        <div class="segment-wrapper">
+                           <h3>Mobile is a must.</h3>
+                           <div class="segment-text">
+                              <p>Making emails work on mobile is a requirement, not a goal. Keep your calls-to-action large and fingertip-friendly. Stay within a maximum width of 600 pixels, and use a hierarchy of text sizes and weights for instant readability on a smaller screen.</p>
+                              <div class="segment-images">
+                              <img src="img/email_iphone_1.png" class="third" id="email-phone">
+                              </div>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!---->
+                     <div class="segment">
+                        <div class="segment-wrapper">
+                           <h3>The more readable an email is, the more successful it will be.</h3>
+                           <div class="segment-text">
+                              <p>It's tempting to want to try using clever twists on HTML defaults, but be sure to back up any grid breaks, light-on-dark designs, or link color changes with sound logic. Emails that follow visual conventions with simple layouts, dark-on-light designs, and blue links with underlines will be more readable, and consequently more effective.</p>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!---->
+                     <div class="segment last">
+                        <div class="segment-wrapper">
+                           <h3>Design for a situation with blocked images.</h3>
+                           <div class="segment-text">
+                              <p>The majority of email clients will automatically block images when an email is opened. An email design should be able to make perfect sense even when all the images are replaced with plain boxes and alt-text.</p>
+                              <p>Below is a good example of an email designed with image blocking in mind, both with images blocked and displayed. The video player image is just a link to an external page, but mimicking a video interface is a clever way of encouraging clicks.</p>
+                              <div class="segment-images">
+                              <a href="img/email_good_imgs_blocked.png" rel="Shadowbox[Email1]"><img src="img/email_good_imgs_blocked.png" class="half"></a>
+                              <a href="img/email_good_imgs_unblocked.png" rel="Shadowbox[Email1]"><img src="img/email_good_imgs_unblocked.png" class="half"></a>
+                              </div>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!--EMAIL Group 2-->
+                     <div class="headlines">
+                        <h1>HTML Email design restrictions:</h1>
+                        <h2>Most email clients are sad, inconsistent, outdated shadows of real web browsers. To build an email in such a way that it will be consistent and functional, it must adhere to some specific requirements.</h2>
+                     </div>
+                     <!---->
+                     <div class="segment">
+                        <div class="segment-wrapper">
+                           <h3>The best layouts are modular.</h3>
+                           <div class="segment-text">
+                              <p>You should be able to break the layout up into a grid, or series of grids without any colliding elements.</p>
+                              <div class="segment-images">
+                              <a href="img/email_layout_bad.png" rel="Shadowbox[Email2]"><img src="img/email_layout_bad.png" class="half"></a>
+                              <a href="img/email_layout_good.png" rel="Shadowbox[Email2]"><img src="img/email_layout_good.png" class="half"></a>
+                              </div>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!---->
+                     <div class="segment">
+                        <div class="segment-wrapper">
+                           <h3>Images and text need to be separate.</h3>
+                           <div class="segment-text">
+                              <p>Live text cannot overlap any image content. That includes gradients!</p>
+                              <div class="segment-images">
+                              	<div id="okay-grad"><div>This is okay</div></div>
+                                <div id="not-okay-grad"><div>This ain't okay</div></div>
+                              </div>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!---->
+                     <div class="segment">
+                        <div class="segment-wrapper">
+                           <h3>Give text room to breathe.</h3>
+                           <div class="segment-text">
+                              <p>A block of live text should be given plenty of flexible horizontal and vertical space due to email client inconsistency. You should never depend on live text to be precisely aligned. Widths, heights, and line breaks can vary based on the email client, and any of these variations can push other elements out of alignment.</p>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!---->
+                     <div class="segment last">
+                        <div class="segment-wrapper">
+                           <h3>R-balls will be inline.</h3>
+                           <div class="segment-text">
+                              <p>Live text should not have any superscripts unless the content block is only 1-2 lines long. Superscripts mess up the line heights (leading) and the usual web page fixes for browsers do not work consistently in emails. See un-superscripted examples below, shown in Arial:</p>
+                              <ul style="font-family:Arial, Helvetica, sans-serif;">
+                              	<li>Registration marks look like this&reg;</li>
+                                <li>Daggers look like swords&dagger;</li>
+                                <li>You may want to replace daggers with asterisks**</li>
+                                <li>Trademarks are fine as they are&trade;</li>
+                              </ul>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                  </section>
+                   <!--HTML (5)-->
+                  <section id="HTML">
+                  <div class="superheadlines">
+                  <h4>HTML(5) Banners and in-app Ads</h4>
+                  </div>
+                     <!--HTML Group 1-->
+                     <div class="headlines">
+                        <h1>Why HTML5?</h1>
+                        <h2>The demand for HTML5-formatted ads increases as the promise for seamless support across desktop computers and mobile devices is propagated throughout the digital advertising marketplace. While HTML5 offers rich design features, it comes with the need for a different skill set outside traditional email development.</h2><h2>HTML5 is the latest update to the Hypertext Markup Language, that includes new semantic tags for features such as video, audio, canvas and other design features.</h2>
+                     </div>
+                      <!---->
+                     <div class="segment">
+                        <div class="segment-wrapper">
+                           <h3>Original Standard HTML5:</h3>
+                           <div class="segment-text">
+                              <p>The STANDARD HTML5 bundle is a baseline unit for simple, quick turnaround creative executions. The level of HTML, CSS and linked scripts require a minimal amount of coding, basic animation and images, typically constrained to a 40k file size or less. The STANDARD HTML5 bundle is optimized for modern cross-browser compatibility and run on mobile devices.</p>
+                              <iframe src="html5/ishares/ISH_US_CoreToolBuilder_English_HTML_300x250.html" width="320" height="270" style="overflow:hidden; border:none;"></iframe>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!---->
+                     <!---->
+                     <div class="segment">
+                        <div class="segment-wrapper">
+                           <h3>Complex HTML5 for Browser or Mobile devices.</h3>
+                           <div class="segment-text">
+                              <p>The COMPLEX HTML5 bundle is a baseline unit for more complex creative executions. There is a higher level of HTML, CSS, and Scripting. The COMPLEX HTML5 Banner may require the use of modern HTML5 capabilities, integrated video, canvas elements, JSON, XML, Third-party API integration and is optimized for modern cross-browser compatibility and targeted mobile platforms or devices.</p>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!---->
+                     <div class="segment">
+                        <div class="segment-wrapper">
+                           <h3>HTML5 provides some of the following benefits:</h3>
+                           <div class="segment-text">
+                              <ul>
+                              	<li>It's based on a well-established format that many authoring tools and developers can produce.</li>
+                              	<li>It provides a rapid testing infrastructure that all browsers should be able to process without using rendering libraries or wrappers.</li>
+                                <li>It preserves HTML standard methods of laying out content such as positioning, layering and opacity.</li>
+                                <li>Ads created in HTML5 offer benefits for flexibility and freedom to delvier ads across platforms and mobile devices. In addition, the demand for rich media is driving adoption of HTML5.</li>
+                              </ul>
+                              <div class="segment-images">
+                              </div>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!---->
+                     <div class="segment">
+                        <div class="segment-wrapper">
+                           <h3>HTML5 Ad Distinction</h3>
+                           <div class="segment-text">
+                              <p>An HTML5 ad is effectively an HTML document or a web page that follows the W3C/WHATWG standards, meaning that web browsers must be able to render the ad like a web page. Preceding all content should be the HTML tag &lt;!DOCTYPE html&gt;. The document should also contain at least &lt;html&gt; and &lt;body&gt; tags.</p>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!---->
+                     <div class="segment">
+                        <div class="segment-wrapper">
+                           <h3>General HTML5 Display Ads are limited to the following traits:</h3>
+                           <div class="segment-text">
+                              <ul>
+                              	<li>Creative that does not expand out of its initial boundaries</li>
+                                <li>All assets should be packages and accounted for the file size.</li>
+                                <li>Desktop ads will range around ~40K while in-app ads range from ~2MB.</li>
+                                <li>Before developing HTML5 ad creative, be sure to consider the technical requirements of the pertinent vendors and partners for ad delivery (ad server and publishers) &mdash; File size, packages, external libraries, coding ClickTags &amp; tracking, backup image. <p>HTML5 doesn't have the compression and packaging capabilities as that of Flash, and with high-density displays permeating the market, larger creative assets are necessary in HTML5 to produce crisp visuals.</p></li>
+                              </ul>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!---->
+                     <div class="segment last">
+                        <div class="segment-wrapper">
+                           <h3>Code and assets.</h3>
+                           <div class="segment-text">
+                              <p>HTML, CSS and JavaScript code are typically written in legible text that is highly compressible and therefore should be minified.</p><p>Asset compression is increasingly important with high-density displays. To compress assets, use PNG "crushers" and other compressors, leverage formats such as scalable vector graphics (SVG) whenever applicable.</p><p>HTML text should be used whenever possible while incorporating fonts that are either stored as part of the ad assets, or delivered dynamically as web fonts. Using text and scalable fonts rather than attempting to bake the text into an image offers significant advantages that improve readability and legibility, reduce image use and improve the accessibility of the HTML5 ad content. Use web-safe fonts (system fonts) whenever possible to reduce file size.</p>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!---->
+                     <!--HTML Group 2-->
+                     <div class="headlines">
+                        <h1>HTML5 Animation:</h1>
+                        <h2>HTML5 animation can be incorporated into display ads in a number of ways and may not be processed the same way as traditional methods. Certain considerations for performance, execution, and publisher/ad server requirements must be taken into account. The following sections offer recommendations for navigating HTML5 animation options.</h2>
+                     </div>
+                     <!---->
+                     <div class="segment">
+                        <div class="segment-wrapper">
+                           <h3>Animation Peformance</h3>
+                           <div class="segment-text">
+                              <p>Creative designers have various animation methods to choose from, but the choice of certain animation elements can overwhelm the CPU and affect ad laod performance. CPU usage can be affected by various animation elements: number of objects animating simultaneously, the efficiency of the code, excessive animated images with transparency, multiple CSS3 effects and complexity of the document's layout.</p>
+                              <p>Consider proper use of JavaScript time controls like, <span style="font-family:'Courier New', Courier, monospace;">setInterval</span>, <span style="font-family:'Courier New', Courier, monospace;">setTimeout</span>, <span style="font-family:'Courier New', Courier, monospace;">requestAnimationFrame;</span> animation loops or DOM element manipulation.</p>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!---->
+                     <div class="segment">
+                        <div class="segment-wrapper">
+                           <h3>CSS Animations VS. jQuery/JavaScript Animations</h3>
+                           <div class="segment-text">
+                              <p>jQuery/JS animation offers more control over CSS3 methods. jQuery may be necessary when key animation must be seen on desktop browsers although using jQuery creates extra overhead upon loading JavaScript in conjunction with the ad's code, which results in a delay in the animation play.</p><p>CSS(3) animation is encouraged for improved performance because it is native code that can execute quickly and involves less coding, which eases the use of the processor. CSS is your best option over jQuery. Support for CSS3 methods should be verified through feature detection prior to serving.</p><p>Unlike Flash, there is no true FPS setting within an HTML5 document, however, there are ways to define Frame per second using a JavaScript variable, but it is not required.</p>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!---->
+                     <div class="segment last">
+                        <div class="segment-wrapper">
+                           <h3>HTML5 Canvas Feature Support Check:</h3>
+                           <div class="segment-text">
+                              <p>In order to safely use HTML5 Canvas the creative should contain code that checks the browser for support of this feature. The following code sample is a way to check for Canvas support, and if the feature is not supported, then it will fall back to whatever content is contained within the Canvas tag, typically a static JPEG version of the ad:</p>
+                              <p style="font-family:'Courier New', Courier, monospace;">function canvasSupport(){<br>return !!document.createElement('canvas').getcontext;<br>};</p>
+                              <p style="font-family:'Courier New', Courier, monospace;">if (!canvasSupport() ){<br> var fallback = document.getElementByID('fallback');<br>fallback.src = imagePath + 'backup.jpg';<br>return;<br>};</p>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!---->
+                  </section>
+                  <!--STANDARD FLASH-->
+                  <section id="STANDARD">
+                  <div class="superheadlines">
+                  <h4>STANDARD FLASH</h4>
+                  </div>
+                     <!--STANDARD Group 1-->
+                     <div class="headlines">
+                        <h1>The Flash file size problem:</h1>
+                        <h2>One of the biggest road bumps in Flash development is what happens when a lovely uncompressed PSD needs to be squeezed into a tiny little 40K SWF. By knowing how much room you have to work with, it becomes easier to design creative to maximize available space and avoid crunchy image compression.</h2>
+                     </div>
+                     <!---->
+                     <div class="segment">
+                        <div class="segment-wrapper">
+                           <h3>What a standard banner looks like?</h3>
+                           <div class="segment-text">
+                             <p><strong>Complexity:</strong> Standard | Standard Flash Banners are SWF files that are used for displaying images, graphics and type. These ads can contain animations with varying degrees of interactivity and function.</p>
+<p><strong>Work Type:</strong> New Master assumes the technical production and testing of a newly coded Flash banner template with a solid code foundation for creative refreshes, new  versions and modifications.</p>
+                             <div class="segment-images">
+                           	   <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="300" height="250" id="FlashID" title="Standard Flash Example">
+                             	  <param name="movie" value="flash/Q2_BLK_SIO-Bull-Market_Flash_300x250.swf">
+                             	  <param name="quality" value="high">
+                             	  <param name="wmode" value="opaque">
+                             	  <param name="swfversion" value="9.0.45.0">
+                             	  <!-- This param tag prompts users with Flash Player 6.0 r65 and higher to download the latest version of Flash Player. Delete it if you don’t want users to see the prompt. -->
+                             	  <param name="expressinstall" value="Scripts/expressInstall.swf">
+                             	  <!-- Next object tag is for non-IE browsers. So hide it from IE using IECC. -->
+                             	  <!--[if !IE]>-->
+                             	  <object type="application/x-shockwave-flash" data="flash/Q2_BLK_SIO-Bull-Market_Flash_300x250.swf" width="300" height="250">
+                             	    <!--<![endif]-->
+                             	    <param name="quality" value="high">
+                             	    <param name="wmode" value="opaque">
+                             	    <param name="swfversion" value="9.0.45.0">
+                             	    <param name="expressinstall" value="Scripts/expressInstall.swf">
+                             	    <!-- The browser displays the following alternative content for users with Flash Player 6.0 and older. -->
+                             	    <div>
+                             	      <h4>Content on this page requires a newer version of Adobe Flash Player.</h4>
+                             	      <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" /></a></p>
+                           	      </div>
+                             	    <!--[if !IE]>-->
+                           	    </object>
+                             	  <!--<![endif]-->
+                           	  </object>
+                             </div>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!---->
+                     <!---->
+                     <div class="segment">
+                        <div class="segment-wrapper">
+                           <h3>What fits in 40K?</h3>
+                           <div class="segment-text">
+                             <p> Image file weight mostly depends on number of colors and amount of detail. The more complex the image is, the heavier it will be. A good rule of thumb is that one banner can accommodate its own pixel dimensions fairly well with little compression. So, a 300x250 banner can take one 300x250 jpeg or equivalent.</p> 
+                             <p>If images have fewer colors or are less detailed, more image surface area can be squeezed in. Keep in mind that of the standard banner sizes, it's the 160x600 that has the most surface area to cover, and tends to have the most visual compression problems.</p>
+                             <p>Below are some actual screen sizes of standard banners. Get a feel for the dimensions, so you can more easily determine what can and can't fit inside them.</p>
+                             <div class="segment-images banner-sizes">
+                             	<div class="gray-gradient flash-size" style="width:726px; height:88px; margin-bottom:10px; float:none;"><p>728x90 Leaderboard</p></div>
+                                <div class="gray-gradient flash-size" style="width:158px; height:598px; margin-right:10px; margin-bottom:10px;"><p>160x600 Skyscraper</p></div>
+                                <div class="gray-gradient flash-size" style="width:298px; height:248px; margin-bottom:10px;"><p>300x250 Mid-Page Unit (MPU)</p></div>
+                                <div class="gray-gradient flash-size" style="width:318px; height:48px;"><p>320x50 Mobile (static or animated GIF)</p></div>
+                                <div class="clear"></div>
+                             </div>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!---->
+                     <div class="segment">
+                        <div class="segment-wrapper">
+                           <h3>Solving the file size problem (in creative).</h3>
+                           <div class="segment-text">
+                              <p>Use repeating elements. Flash doesn't care if you use the same image a hundred times; it will only contribute to the file size once. When possible, try to use vector graphics instead of raster, as vectors will be far more lightweight and don't need any compression.</p>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!---->
+                     <div class="segment last">
+                        <div class="segment-wrapper">
+                           <h3>Solving the file size problem (in development).</h3>
+                           <div class="segment-text">
+                              <p>Many image effects can be recreated in Flash with vector masks, blend modes, and simple filters. Often, reflections can be created manually in Flash as well. The image is brought in as a cropped and optimized jpeg, a vector mask is applied to remove the background, and it's then flipped and masked with a gradient. In desperate situations, symmetrical images can be cropped in half and mirrored in Flash to create a whole. </p>
+                              <p>So, for something like this...</p>
+                              <div class="segment-images">
+                              <img src="img/snowflakes.png" class="half">
+                              </div>
+                              <p>you only need to bring in this asset, saving a lot of file size:</p>
+                              <div class="segment-images">
+                              <img src="img/snowflakepart.gif">
+                              </div>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!--STANDARD Group 2-->
+                     <div class="headlines">
+                        <h1>The details of animating:</h1>
+                        <h2>Animation notes from creatives are necessary for a smooth development process. It doesn't matter if you say "make this flop around like a fish, sit for a few seconds, and then fly out to the top right like it's on fire", the more descriptive, the better. </h2>
+                     </div>
+                     <!---->
+                     <div class="segment">
+                        <div class="segment-wrapper">
+                           <h3>The word "animates" is banned.</h3>
+                           <div class="segment-text">
+                              <p>"The text animates onto the stage and then the image animates in above it." No. Be more specific. "Fades", "slides", "drops", "reveals", etc. are much more helpful verbs.</p>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!---->
+                     <div class="segment">
+                        <div class="segment-wrapper">
+                           <h3>Direct the style of the animation.</h3>
+                           <div class="segment-text">
+                              <p>When a banner has a call-to-action on the final frame, should there be a rollover effect? Do you want a replay button to appear? What kind of look and feel are you going for, sharp and zippy? Soft and dreamy? Fun and bouncy? Start thinking about things like interactions and motion style.</p>
+                              <div class="segment-images">
+                              <img src="img/zipball.gif" class="third">
+                              <img src="img/rollball.gif" class="third">
+                              <img src="img/bouncingball.gif" class="third">
+                              </div>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!---->
+                     <div class="segment">
+                        <div class="segment-wrapper">
+                           <h3>Remember the medium.</h3>
+                           <div class="segment-text">
+                              <p>Flash is not After Effects. Complex morphs, 3D effects, piles of independent moving parts, or panning across giant images are at best, difficult to do well, and at worst, nearly impossible. These sorts of animations just aren't appropriate for Flash, and you could end up disappointed by the results. </p>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!---->
+                     <div class="segment last">
+                        <div class="segment-wrapper">
+                           <h3>Add a 1-pixel border.</h3>
+                           <div class="segment-text">
+                              <p>This applies to all Flash (standard and rich) and static banners. It’s a best practice, and often a vendor requirement, to add a 1-pixel border to an ad. Usually it ends up being a medium gray, but the exact shade can be chosen to complement the creative. Just make sure the color is consistent within each concept.</p>
+                              <p>The border helps to anchor an ad on the page, especially in cases where the colors at the edge of the ad may match the page's background.</p>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                  </section>
+                  <!--RICH-->
+                  <section id="RICH">
+                  <div class="superheadlines">
+                  <h4>RICH MEDIA</h4>
+                  </div>
+                     <!--RICH Group 1-->
+                     <div class="headlines">
+                        <h1>The rules of rich media:</h1>
+                        <h2>With rich media campaigns, there are a lot of new opportunities. IMPORTANT: Ask for specs before development. Know the Ad Serving Platform, requirements, k-weight, dimensions, FPS, dynamic elements and analytics. The campaign’s limiting factor is often going to be the details of the media buy. For efficiency, it's normal to build files to adhere to the strictest specifications of a campaign (a "lowest common denominator" strategy). So, a lot of the projects end up following a set of specific types.</h2>
+                     </div>
+                     <!---->
+                     <div class="segment">
+                        <div class="segment-wrapper">
+                           <h3>What a Rich Media banner looks like.</h3>
+                           <div class="segment-text">
+                             <p><strong>Complexity:</strong> Standard | Standard Rich Media Assumes advanced technology integration requiring and/or a database or server side code, Flash Media Server, consumption of data from 3rd party sources (API's, RSS) or data capture. Includes in-banner videos, audio, standard expanding panels, video player with reskin.</p>
+<p><strong>Work Type:</strong> New Master assumes the technical production and testing of a newly coded RichMedia banner template with a solid code foundation for creative refreshes, new versions and modifications.
+</p>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!---->
+                     <!---- EXAMPLE RICH MEDIA UNIT-->
+                     <div class="segment">
+                          <iframe src="http://platform.mediamind.com/Eyeblaster.Preview.Web/Default.aspx?previewID=vc%2B%2FJ6IaKlGvixl1r7Qx%2BSPAxpC%2B5jDv%2F7oakjgoFGdimgP9zkaPBw%3D%3D&AdID=20670810&lang=en-US" width="100%" height="400" style="overflow:scroll;"></iframe>
+                     </div>
+                     <!---->
+                     <!---->
+                     <div class="segment">
+                        <div class="segment-wrapper">
+                           <h3>Secure Ad Serving</h3>
+                           <div class="segment-text">
+                             <p><strong>DFA Example:</strong> Secure pages require secure tags. If the URL of a page starts with https, make sure the URLs in your tags start with https as well. That includes DFA tags and third-party URLs, and any other tags you place on a secure page. Otherwise, your ads may not serve correctly.<br>Image Example: &lt; img src="https://my.cdn/RichMedia/my_header_image.jpg" / &gt;</p>
+                             <p><strong>What is a secure page?</strong> A secure page uses encrypted data to keep communications over the internet secure. Any URL that starts with https uses a secure protocol to encrypt data. Usually it's either an SSL or TLS protocol (a Secure Socket Layer protocol or a Transport Layer Security protocol). As you might guess, the s at the end of https stands for "secure": Hypertext Transfer Protocol Secure.</p>
+                             <p>Survey URLs, third-party impression trackers, and other third-party URLs in a creative must use https when placed on secure sites. This includes, for example, URLs from Dynamic Logic, Insight Express, Evidon, and DoubleVerify. These tags and URLs must be manually modified. Please contact any third-party companies you work with to request secure versions of their tags or URLs.</p>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!---->
+                     <!---->
+                     <div class="segment">
+                        <div class="segment-wrapper">
+                           <h3>Rich media introduces new opportunities for engagement.</h3>
+                           <div class="segment-text">
+                             <p> The most common elements seen in rich media campaigns are polite loads, expanding units, and embedded video. “Polite load” is a method where a lightweight flash file is used to bring in a heavier file once the entire page is loaded. Most rich media formats are based on the concept of polite loading.</p><p>It's always good practice to lock down the specs for the inital polite load and secondary loads for the development team.
+                          </p>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!---->
+                      <!---->
+                     <div class="segment">
+                        <div class="segment-wrapper">
+                           <h3>Back up GIF/JPG</h3>
+                           <div class="segment-text">
+                             <p>Typically the resolve frame can work as a static unit, but remeber to omit any interactions beyond a single click.
+                          </p>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!---->
+                     <div class="segment">
+                        <div class="segment-wrapper">
+                           <h3> The most common specs are usually correct.</h3>
+                           <div class="segment-text">
+                              Because of the "lowest common denominator" approach, there are some common industry specs it's safe to build concepts for. 
+                              <table>
+                                 <tr>
+                                    <td>Unit</td>
+                                    <td>Collapsed size</td>
+                                    <td>Expanded size (varies)</td>
+                                    <td>Expand direction</td>
+                                 </tr>
+                                 <tr>
+                                    <td>MPU (mid page unit)</td>
+                                    <td>300x250</td>
+                                    <td>up to 500x250</td>
+                                    <td>left</td>
+                                 </tr>
+                                 <tr>
+                                    <td>Skyscraper</td>
+                                    <td>160x600</td>
+                                    <td>up to 600x600</td>
+                                    <td>left</td>
+                                 </tr>
+                                 <tr>
+                                    <td>Leaderboard</td>
+                                    <td>728x90</td>
+                                    <td>up to 728x300</td>
+                                    <td>down</td>
+                                 </tr>
+                                 <tr>
+                                    <td>Leaderboard</td>
+                                    <td>970x66</td>
+                                    <td>up to 970x418</td>
+                                    <td>down</td>
+                                 </tr>
+                              </table>
+                              <ul>
+                                 <li>Open/close methods must match (rollover or click).</li>
+                                 <li>Videos, especially if they are TV spots, have an aspect ratio of 16:9.</li>
+                                 <li>There is typically a time limit of 30 seconds for video (15 for animation) without user interaction. If a user interacts with the banner, the time limit is lifted.
+                              </ul>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!---->
+                     <div class="segment last">
+                        <div class="segment-wrapper">
+                           <h3>Some resizes are bigger than others.</h3>
+                           <div class="segment-text">
+                              <p>Though it is common practice to begin designing the 300x250 banner first, if you see the table above, you’ll see that it has the smallest expanded unit size. Often, the skyscraper and leaderboard resizes have room to accommodate added functionality or a more complex layout in the expanded state. It may be worth it to think about the bigger resizes first, and then dumb that down for the 300x250.</p>
+                              
+                              <p>Relative expanded sizes:</p>
+                              <div class="segment-images">
+                              <a href="img/rich_expanded_relative_sizes.png" rel="Shadowbox[Rich1]"><img src="img/rich_expanded_relative_sizes.png" class="twothirds"></a>
+                              </div>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!--RICH Group 2-->
+                     <div class="headlines">
+                        <h1>Rich media UX Considerations:</h1>
+                        <h2>With every opportunity for user interaction, there is an opportunity to influence user behavior through good design.</h2>
+                     </div>
+                     <!---->
+                     <div class="segment">
+                        <div class="segment-wrapper">
+                           <h3>Consider "expand" calls-to-action and "close" buttons.</h3>
+                           <div class="segment-text">
+                              <p>Make it clear to the user what's going to happen when they click your ad. A vague "click to see more" may make it seem like clicking will take them away from the page they're on. "Click to expand" or even "expand to see more" are more specific, and can increase interaction rate. Close buttons must be easily visible and intuitive.</p>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!---->
+                     <div class="segment">
+                        <div class="segment-wrapper">
+                           <h3>Video players must have basic controls (at least).</h3>
+                           <div class="segment-text">
+                              <p>Most vendor specs will require play/pause and mute/unmute as the bare minimum for a video player. It’s better to design these controls intentionally than rely on ugly defaults (see a few below&mdash;consider yourself warned).</p>
+                              <div class="segment-images">
+                              <img src="img/rich_video_defaults.png">
+                              </div>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!---->
+                     <div class="segment last">
+                        <div class="segment-wrapper">
+                           <h3>Interactions need to be fully fleshed out.</h3>
+                           <div class="segment-text">
+                              <p>If you’re asking the user to do something, it has to be dumbed down and extremely obvious. Don’t leave any ambiguity in your instructions. Use specific diagrams, or even little moving cursors and arrows if it’s more complicated. Do the instructions fade out once the user has begun the interaction? What does it look like once the user has succeeded? What if they stop halfway through? Provide visual feedback for every step of the process.</p>
+                              
+                              <p>Unclear:</p>
+                              <div class="segment-images">
+                              <img src="img/rich_interaction_bad.png">
+                              </div>
+                              <p>Clear:</p>
+                              <div class="segment-images">
+                              <img src="img/rich_interaction_good.png">
+                              </div>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                  </section>
+                  <!--GRAPHICS-->
+                  <section id="GRAPHICS">
+                  <div class="superheadlines">
+                  <h4>GRAPHICS</h4>
+                  </div>
+                     <!--GRAPHICS Group 1-->
+                     <div class="headlines">
+                        <h1>Digital file formats:</h1>
+                        <h2>For people more experienced with print files, the world of web images can get pretty confusing. Clearing up the types, limitations, sizes, and capabilities can help everyone get on the same page. These rules apply not only to static banners, but also to emails and Flash banners, which use these formats to control file size and optimize for web.</h2>
+                     </div>
+                     <!---->
+                     <div class="segment">
+                        <div class="segment-wrapper">
+                           <h3>JPEG</h3>
+                           <div class="segment-text">
+                              <p>JPEG is a lossy format that easily compresses to small sizes. If an image is compressed too much, things may start to look “crunchy”.</p>
+                              <p>At decent quality settings, this format is most useful for images with many colors or a lot of detail, especially photographs. Any solid color blocks or vector graphics will probably look like garbage though, even at a higher quality setting.</p><br>
+                              <div class="segment-images-zoom zoom" id="zoom-jpg">
+                              <img src="img/graphics_low_big.jpg">
+                              <p>Hover</p>
+                              </div>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!---->
+                     <div class="segment">
+                        <div class="segment-wrapper">
+                           <h3>PNG-24</h3>
+                           <div class="segment-text">
+                              <p>PNG (24-bit) is a lossless format with all the capabilities as a JPEG, plus the ability to display large blocks of solid colors very well. This format also supports transparency extremely well, including partial opacity. The only problem is that the file size is also much larger than most other formats.</p><br>
+                              <div class="segment-images-zoom zoom" id="zoom-png">
+                              <img src="img/graphics_low.png">
+                              <p>Hover</p>
+                              </div>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!---->
+                     <div class="segment">
+                        <div class="segment-wrapper">
+                           <h3>GIF/PNG-8</h3>
+                           <div class="segment-text">
+                              <p>GIF (and the similar PNG 8-bit) images are processed with an interesting color model. The number of unique colors in an image determines the file size, and those colors are indexed in a list. The maximum number of colors is 255 + alpha, so ideally, this file format is used for images that have few colors and not much detail. It also supports transparency, but only if the pixels are fully transparent or fully opaque.</p>
+                              <p>Any areas with visual gradients are usually compressed into very few colors, and can be tweaked through various dithering settings. Different dithering algorithms will scatter the pixels in different patterns, and the ideal setting depends on the image. GIFs are often useful for simple graphics with few colors, like solid-color logos.</p><br>
+                              <div class="segment-images-zoom zoom" id="zoom-gif">
+                              <img src="img/graphics_low_big.gif">
+                              <p>Hover</p>
+                              </div>
+                              <p>32 colors used in above GIF:</p>
+                              <img src="img/graphics_gifcolors.png" class="half">
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!---->
+                     <div class="segment last">
+                        <div class="segment-wrapper">
+                           <h3>Animated GIF</h3>
+                           <div class="segment-text">
+                              <p>Animated GIFs are the same format as a regular GIF, so they follow all the same rules, but they have some added considerations. An animated GIF’s file size depends largely on the amount of pixels that change in between frames. If the animation is subtle, it can be optimized much more successfully.</p>
+                              <p>Animated GIFs are at their best when displaying a mostly static image with small moving parts, rather than a slideshow.</p>
+                              <div class="segment-images-zoom zoom" id="zoom-anim">
+                              <img src="img/butter980.gif">
+                              <p>Hover</p>
+                              </div>
+                              <p>Gorgeous cinemagraph GIF by Jamie Beck &amp; Kevin Burg, <a href="http://annstreetstudio.com/2013/09/02/butterfly/" target="_blank">From Me To You</a></p>
+                              <p>Notice that the color palette is intentionally limited, as is the area being animated.</p>
+                              <p>255 colors used in above GIF (plus alpha transparency, though it's unused):</p>
+                              <img src="img/graphics_animated_palette.png" class="half">
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!--GRAPHICS Group 2-->
+                     <div class="headlines">
+                        <h1>Color spaces:</h1>
+                        <h2>For images in print, color information is usually saved as a combination of cyan, magenta, yellow, and black ink. Whenever images are viewed on a screen however, these colors are being represented as a combination of red, green, and blue light. It’s important to realize the differences in order to prevent conversion issues.</h2>
+                     </div>
+                     <!---->
+                     <div class="segment">
+                        <div class="segment-wrapper">
+                           <h3>Yes, all digital creative needs to be RGB.</h3>
+                           <div class="segment-text">
+                              <p>If the colors in a design are delivered in CMYK, there may be major visual issues with inconsistent hues. Many brand-specific style guides give specific RGB hex value equivalents of certain spot colors. Use these colors for any digital projects. Any brand logos or graphics also may need to be color-corrected when converted to RGB.</p>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!---->
+                     <div class="segment">
+                        <div class="segment-wrapper">
+                           <h3>Look out for common problems.</h3>
+                           <div class="segment-text">
+                              <p>It might seem obvious, but the most common conversion problems tend to occur in the brightest reds, greens, and blues. RGB has a wider spectrum of colors available than CMYK. When colors go from RGB to CMYK and back to RGB, reds can turn slightly pinkish, and blues and greens get much more dull. Make sure your brightest hues are being represented correctly.</p>
+                              <p>See the rainbow spectrum below, in RGB, and converted to CMYK and back to RGB, respectively.</p>
+                              <div class="segment-images">
+                              <a href="img/rainbow_rgb.jpg" rel="Shadowbox[Graphics2]"><img src="img/rainbow_rgb.jpg" class="third"></a>
+                              <a href="img/rainbow_cmyk.jpg" rel="Shadowbox[Graphics2]"><img src="img/rainbow_cmyk.jpg" class="third"></a>
+                              </div>
+                              <p>Below is the same thing, but isolated to red, green, and blue. Keep this in mind especially for logos, which often make use of saturated reds and blues.</p>
+                              <div class="segment-images">
+                              <a href="img/graphics_rgb.gif" rel="Shadowbox[Graphics2]"><img src="img/graphics_rgb.gif" class="third"></a>
+                              <a href="img/graphics_cmyk.gif" rel="Shadowbox[Graphics2]"><img src="img/graphics_cmyk.gif" class="third"></a>
+                              </div>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!---->
+                     <div class="segment last">
+                        <div class="segment-wrapper">
+                           <h3>GIF and PNG-8 files have limited palettes.</h3>
+                           <div class="segment-text">
+                              <p>Both GIF files and PNG-8 have 8 bits of storage for red, green, and blue each. This means the total amount of colors available in one of these files is 256 (8<sup>3</sup>). Because of this, an image with more colors must be saved in a different format with (usually) a larger file size. For animated images, which must be GIFs, the color palette will always be forced down to 256 colors.</p>
+                              <p>Below are two 64-color GIFs: one with no dithering, and one with a dithering algorithm of "pattern", respectively. When an image has dithering applied, solid blocks of color will be broken up into scattered pixels to simulate gradients.</p> 
+                              <div class="segment-images">
+                              <a href="img/rainbow_gif.gif" rel="Shadowbox[Graphics3]"><img src="img/rainbow_gif.gif" class="third"></a>
+                              <a href="img/rainbow_gif_dither.gif" rel="Shadowbox[Graphics3]"><img src="img/rainbow_gif_dither.gif" class="third"></a>
+                              </div>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!--GRAPHICS Group 3-->
+                     <div class="headlines">
+                        <h1>Image resolution:</h1>
+                        <h2>There seems to be a lot of confusion on the subject of image resolution in digital applications. Long story short: it’s meaningless.</h2>
+                     </div>
+                     <!---->
+                     <div class="segment">
+                        <div class="segment-wrapper">
+                           <h3>PPI or DPI?</h3>
+                           <div class="segment-text">
+                              <p>PPI (pixels per inch) is the usual metric used for image resolution in print. DPI (dots per inch) refers solely to a printer’s ink density settings. Neither matters for digital graphics. While it’s commonly thought that images need to be saved at 72 ppi for digital applications, this is misleading. The 72 ppi setting is simply the default when an image with no resolution settings is opened in Photoshop.</p>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!---->
+                     <div class="segment">
+                        <div class="segment-wrapper">
+                           <h3>The internet is in pixels, not inches.</h3>
+                           <div class="segment-text">
+                              <p>Some image formats save resolution and dimension information in special file attributes called metadata. When a JPEG is saved “for Web &amp; Devices” out of Photoshop, this metadata is discarded to save file size. For PNG and GIF files, this metadata doesn’t get saved anyway. Pixel size is the only measurement that gets saved.</p>
+                              <p>One of these kittens was saved at 72 ppi, and the other was saved at 1000 ppi (note: they were saved with a regular "Save As" instead of "Save for Web &amp; Devices", which discards resolution). Both have the same pixel dimensions. Can you tell which is which without downloading and opening them in Photoshop?</p>
+                              <div class="segment-images">
+                              <a href="img/graphics_kitten2.jpg" rel="Shadowbox[Graphics4]"><img src="img/graphics_kitten2.jpg" class="half"></a>
+                              <a href="img/graphics_kitten1.jpg" rel="Shadowbox[Graphics4]"><img src="img/graphics_kitten1.jpg" class="half"></a>
+                              </div>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!---->
+                     <div class="segment last">
+                        <div class="segment-wrapper">
+                           <h3>“Hi-res” doesn’t apply.</h3>
+                           <div class="segment-text">
+                              <p>Of course, an asset’s Photoshop documents should be created non-destructively, so that larger elements are embedded as smart objects. The complete asset though, whether it’s an email, Flash storyboard frame, or static banner, will only exist at the correct pixel dimensions with an irrelevant resolution setting.</p>
+                              <div class="clear"></div>
+                           </div>
+                        </div>
+                     </div>
+                  </section>
+                  <!--footer-->
+                  <footer>
+                  <div>
+                  	<h2>Contact us if you have any questions or ideas for additional content.</h2>
+                    <p class="contact">Todd Warren<br>Director, Digital Production Studio<br>RedWorks New York<br>212.237.4872<br><a href="mailto:todd.warren@ogilvy.com"target="_blank">todd.warren@ogilvy.com</a></p>
+                    <p class="contact">Matthew Morton<br>Creative Technology Manager<br>RedWorks New York<br>212.237.4968<br><a href="mailto:matthew.morton@ogilvy.com" target="_blank">matthew.morton@ogilvy.com</a></p>
+                  	<p id="copyright"></p>
+                    <p id="redworks">&copy; 2014 RedWorks</p>
+                    <div class="clear"></div>
+                    </div>
+                  </footer>
+               </div>
+               <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+               <script src="js/plugins.js"></script>
+               <script src="js/main.js"></script>
+               <script src="src/jquery.event.special.js"></script>
+               <script src="src/jquery.easing.min.js"></script>
+               <!--<script src="src/jquery.scrollsnap.js"></script>-->
+               <script>
+			   //this plugin started cool but is actually kinda annoying
+			   //function activateScrollSnap(){
+					//if($(window).width()>800){
+                  		//$(document).scrollsnap({
+                  			//snaps: '.headlines',
+                  			//proximity: 100
+                  		//});
+                  	//}
+				//}
+				
+				
+				
+				$(window).scroll(function(){
+					if(navActivated){
+						var curScroll=$(this).scrollTop();
+						if(curScroll>headerOffset){
+							if(curScroll>prevScroll){
+								if($('#nav-wrap').css('top')=='0px'){
+									$('#nav-wrap').stop(true,true).animate({top:'0px'}, 500);
+								}
+							}
+							else{
+								if($('#nav-wrap').css('top')=='-'+headerOffset+'px'){
+									$('#nav-wrap').stop(true,true).animate({top:'0px'}, 500);
+								}
+							}
+						}
+						prevScroll=curScroll;
+					}	
+				});
+				
+				var navActivated=false,
+					prevScroll=0,
+					headerOffset=$('#nav-wrap').height();
+					
+				function activateNav(){
+					if(($('#nav-wrap').width()>$('#nav-wrap').height())&&!navActivated){
+						headerOffset=$('#nav-wrap').height();
+						navActivated=true;
+					}
+					else if(navActivated){
+						navActivated=false;
+					}
+				}
+				$(window).resize(function(){
+					activateNav();
+				});
+				$(window).load(function(){
+					activateNav();
+					console.log(headerOffset);
+				});
+                $(document).ready(function(){
+					if($(window).width()<600){
+						$('.zoom').find('p').text("Drag");
+					}
+                  	//activateScrollSnap();
+					var catPhone=false;
+					$('#email-phone').click(function(){
+						if(!catPhone){
+							$(this).attr('src', 'img/email_iphone_2.png');
+							catPhone=true;
+						}
+						else{
+							$(this).attr('src', 'img/email_iphone_1.png');
+							catPhone=false;
+						}
+					});
+					var clickState=false;
+					$('#live-button').click(function(){
+						if(!clickState){
+							$(this).text("yay!");
+							clickState=true;
+						}
+						else{
+							$(this).text("I'm alive!");
+							clickState=false;
+						}
+					});
+					var clickStateD=false;
+					$('#dead-button').click(function(){
+						if(!clickStateD){
+							$(this).text("boo!");
+							clickStateD=true;
+						}
+						else{
+							$(this).text("I'm dead.");
+							clickStateD=false;
+						}
+					});
+                });
+               </script>
+               
+               <script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+                  
+                  ga('create', 'UA-45073446-1', 'ogilvyproject.com');
+                  ga('send', 'pageview');
+swfobject.registerObject("FlashID");
+               </script>
+            </body>
+         </html>
